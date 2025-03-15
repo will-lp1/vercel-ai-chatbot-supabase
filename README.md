@@ -22,7 +22,6 @@ This is a chat application template built with Next.js and Supabase, providing a
 
 ### Prerequisites
 
-- Node.js 18+ and npm/yarn
 - Supabase CLI installed (for local development)
 - A Supabase project (for production)
 
