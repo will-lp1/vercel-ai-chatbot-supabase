@@ -5,7 +5,6 @@ import {
 } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { fireworks } from '@ai-sdk/fireworks';
-import { groq } from '@ai-sdk/groq';
 import { isTestEnvironment } from '../constants';
 import {
   artifactModel,
@@ -26,14 +25,14 @@ export const myProvider = isTestEnvironment
     })
   : customProvider({
       languageModels: {
-        'chat-model-small': groq('llama-3.1-8b-instant'),
-        'chat-model-large': groq('llama-3.3-70b-versatile'),
+        'chat-model-small': openai('gpt-4o-mini'),
+        'chat-model-large': openai('gpt-4o'),
         'chat-model-reasoning': wrapLanguageModel({
-          model: groq('deepseek-r1-distill-llama-70b'),
+          model: fireworks('deepseek-r1-distill-llama-70b'),
           middleware: extractReasoningMiddleware({ tagName: 'think' }),
         }),
-        'title-model': groq('llama-3.1-8b-instant'),
-        'artifact-model': groq('llama-3.1-8b-instant'),
+        'title-model': openai('gpt-4o-mini'),
+        'artifact-model': openai('gpt-4o-mini'),
       },
       imageModels: {
         'small-model': openai.image('dall-e-2'),
