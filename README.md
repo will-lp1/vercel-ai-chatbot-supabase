@@ -1,0 +1,132 @@
+# Next.js Chat Application with Supabase
+
+This is a chat application template built with Next.js and Supabase, providing a modern UI for conversations with AI assistants.
+
+## Features
+
+- Real-time chat interface
+- Model selector for different AI models
+- Public/private visibility for chats
+- Document management
+- Suggestions system
+- User authentication via Supabase Auth
+- Row-level security for data protection
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, Tailwind CSS
+- **Backend**: Supabase (PostgreSQL, Auth)
+- **Styling**: Tailwind CSS
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm/yarn
+- Supabase CLI installed (for local development)
+- A Supabase project (for production)
+
+### Setting Up the Project
+
+1. Clone this repository
+
+```bash
+git clone <repository-url>
+cd <repository-name>
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up Supabase locally
+
+```bash
+supabase init
+supabase start
+```
+
+4. Copy the environment variables
+
+```bash
+cp .env.example .env.local
+```
+
+5. Update the `.env.local` file with your Supabase URL and anon key (found in the Supabase dashboard or from the local setup)
+
+6. Run the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the application running.
+
+## Database Structure
+
+The application uses the following tables in Supabase:
+
+- `Chat`: Stores chat conversations
+- `Message`: Stores individual messages in chats
+- `MessageContent`: Stores different types of content within messages
+- `Document`: Stores document information
+- `Suggestion`: Stores suggestions for document improvements
+- `Vote`: Tracks user votes on messages
+
+See the `supabase/README.md` file for more details on the database structure and migration files.
+
+## Authentication
+
+The application uses Supabase Auth for user authentication. Users can:
+
+- Sign up with email and password
+- Log in with existing credentials
+- Access their own chats and documents
+
+## Deployment
+
+### Deploying the Frontend
+
+You can deploy the Next.js application to Vercel:
+
+1. Push your code to a GitHub repository
+2. Import the project in Vercel
+3. Set the environment variables (from your Supabase project)
+4. Deploy
+
+### Deploying the Database
+
+1. Create a Supabase project
+2. Link your local project to the Supabase project:
+
+```bash
+supabase link --project-ref your-project-ref
+```
+
+3. Push the migrations:
+
+```bash
+supabase db push
+```
+
+## Project Structure
+
+- `/app`: Next.js app router files
+- `/components`: React components
+- `/lib`: Utility functions and shared code
+- `/public`: Static assets
+- `/supabase`: Supabase configuration and migrations
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
