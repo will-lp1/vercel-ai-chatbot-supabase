@@ -30,7 +30,6 @@ export const Suggestion = ({
         <motion.div
           className={cn('cursor-pointer text-muted-foreground p-1', {
             'absolute -right-8': artifactKind === 'text',
-            'sticky top-0 right-4': artifactKind === 'code',
           })}
           onClick={() => setIsExpanded(true)}
           whileHover={{ scale: 1.1 }}
@@ -50,7 +49,7 @@ export const Suggestion = ({
           <div className="flex flex-row items-center justify-between">
             <div className="flex flex-row items-center gap-2">
               <div className="size-4 bg-muted-foreground/25 rounded-full" />
-              <div className="font-medium">snow leapord</div>
+              <div className="font-medium">Assistant</div>
             </div>
             <button
               type="button"
