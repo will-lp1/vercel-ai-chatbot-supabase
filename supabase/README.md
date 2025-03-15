@@ -55,6 +55,40 @@ The database schema is defined in the `migrations` directory. The migrations set
    supabase db push
    ```
 
+## Alternative Ways to Apply Migrations
+
+### Using Supabase SQL Editor Directly
+
+If you prefer to apply the migrations manually:
+
+1. Navigate to your Supabase project dashboard
+2. Go to the SQL Editor tab
+3. Copy the contents of the migration files from the `migrations` directory
+4. Paste and execute these SQL files in order in the SQL Editor
+
+For example, first execute `20240601000000_initial_schema.sql`, then `20240601000001_functions_and_types.sql`.
+
+### Using supabase-mcp-server with AI Coding Tools
+
+For a seamless setup experience, you can use the [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) with AI coding tools:
+
+1. Install the supabase-mcp-server:
+```bash
+npm install -g supabase-mcp-server
+```
+
+2. Connect to your Supabase project through the server:
+```bash
+supabase-mcp-server --project-id your-project-id --api-key your-service-role-key
+```
+
+3. Use an AI coding assistant (like Claude, ChatGPT, or GitHub Copilot) to:
+   - Analyze your migration files
+   - Apply them to your project through the server
+   - Verify the database schema
+
+This approach provides a more interactive and guided setup process, especially useful for complex schemas or when you need assistance understanding the database structure.
+
 ## Database Schema
 
 ### Main Tables

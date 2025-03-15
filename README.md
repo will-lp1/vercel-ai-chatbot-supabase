@@ -100,7 +100,11 @@ You can deploy the Next.js application to Vercel:
 3. Set the environment variables (from your Supabase project)
 4. Deploy
 
-### Deploying the Database
+### Setting Up the Database
+
+There are multiple ways to set up the database for this application:
+
+#### Option 1: Using Supabase CLI (Recommended for Development)
 
 1. Create a Supabase project
 2. Link your local project to the Supabase project:
@@ -114,6 +118,31 @@ supabase link --project-ref your-project-ref
 ```bash
 supabase db push
 ```
+
+#### Option 2: Using Supabase SQL Editor Directly
+
+1. Navigate to your Supabase project dashboard
+2. Go to the SQL Editor tab
+3. Copy the contents of the migration files from either:
+   - `supabase/migrations/*.sql` files
+   - `lib/db/migrations/*.sql` files
+4. Paste and execute these SQL files in order in the SQL Editor
+
+For example, first execute `20240601000000_initial_schema.sql`, then `20240601000001_functions_and_types.sql`.
+
+#### Option 3: Using supabase-mcp-server with AI Coding Tools
+
+For a seamless setup experience, you can use the [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) with AI coding tools to:
+
+1. Install the supabase-mcp-server:
+```bash
+npm install -g supabase-mcp-server
+```
+
+2. Connect to your Supabase project through the server
+3. Have the AI assistant analyze the migration files and apply them to your project
+
+This approach is particularly useful when working with AI coding IDEs, like Windsurf and Cursor, that can help automate the setup process and ensure all migrations are applied correctly.
 
 ## Project Structure
 
