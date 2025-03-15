@@ -31,16 +31,14 @@ This is a chat application template built with Next.js and Supabase, providing a
 1. Clone this repository
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/will-lp1/vercel-ai-chatbot-supabase.git>
 cd <repository-name>
 ```
 
 2. Install dependencies
 
-```bash
-npm install
-# or
-yarn install
+```
+pnpm install
 ```
 
 3. Set up Supabase locally
@@ -61,9 +59,7 @@ cp .env.example .env.local
 6. Run the development server
 
 ```bash
-npm run dev
-# or
-yarn dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to see the application running.
@@ -134,11 +130,7 @@ For example, first execute `20240601000000_initial_schema.sql`, then `2024060100
 
 For a seamless setup experience, you can use the [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) with AI coding tools to:
 
-1. Install the supabase-mcp-server:
-```bash
-npm install -g supabase-mcp-server
-```
-
+1. Follow the setup 
 2. Connect to your Supabase project through the server
 3. Have the AI assistant analyze the migration files and apply them to your project
 
