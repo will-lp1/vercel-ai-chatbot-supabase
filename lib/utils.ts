@@ -255,7 +255,7 @@ export function getDocumentTimestampByIndex(
 }
 
 interface MessageContent {
-  type: 'text' | 'tool_call' | 'tool_result';
+  type: 'text' | 'tool_call' | 'tool_result' | 'code' | 'image' | 'system';
   content: any;
   order: number;
 }

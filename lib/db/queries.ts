@@ -1,6 +1,6 @@
 import 'server-only';
 import { createClient } from '@/utils/supabase/server';
-import type { Database } from '@/utils/supabase/database.types';
+import type { Database } from '@/lib/db/database.types';
 import type { ArtifactKind } from '@/components/artifact';
 import { cookies } from 'next/headers';
 
