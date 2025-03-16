@@ -1,4 +1,4 @@
-# Next.js Chat Application with Supabase
+# Next.js Ai-Chat with Supabase
 
 This is a chat application template built with Next.js and Supabase, providing a modern UI for conversations with AI assistants.
 
